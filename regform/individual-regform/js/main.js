@@ -58,7 +58,15 @@ document.querySelector('#class').addEventListener('click', function (e) {
   selectValue = e.target.value
 })
 
-const data = { surnameValue }
+const data = {
+  surname: surnameValue,
+  othersName: othernameValue,
+  class: 'ss2',
+  email: emailValue,
+  gender: 'male',
+  school: schoolValue,
+  phone: phoneValue,
+}
 
 const fetchData = {
   method: 'POST',
@@ -69,7 +77,7 @@ const fetchData = {
 }
 
 function handleSubmit() {
-  fetch(url, fetchData)
+  fetch('https://golden-api-napf.onrender.com/api/v1/reg/student', fetchData)
     .then((res) => {
       console.log({ res })
     })
