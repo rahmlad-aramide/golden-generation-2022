@@ -40,30 +40,45 @@ document.querySelector('#address').addEventListener('change', function (e) {
   homeAddressValue = e.target.value
 })
 
-let maleInputValue
-document.querySelector('#male').addEventListener('click', function (e) {
+// let genderValue
+// document
+//   .querySelectorAll('[name="gender"]')
+//   .addEventListener('click', function (e) {
+//     console.log(e.target.value)
+//     genderValue = e.target.value
+//   })
+// console.log(document.querySelector('[name="gender"]'))
+
+// let maleInputValue
+// document.querySelector('#male').addEventListener('click', function (e) {
+//   console.log(e.target.value)
+//   maleInputValue = e.target.value
+// })
+
+// let femaleInputValue
+// document.querySelector('#female').addEventListener('click', function (e) {
+//   console.log(e.target.value)
+//   femaleInputValue = e.target.value
+// })
+
+let genderValue
+document.querySelector('#gender').addEventListener('click', function (e) {
   console.log(e.target.value)
-  maleInputValue = e.target.value
+  genderValue = e.target.value
 })
 
-let femaleInputValue
-document.querySelector('#female').addEventListener('click', function (e) {
-  console.log(e.target.value)
-  femaleInputValue = e.target.value
-})
-
-let selectValue
+let classValue
 document.querySelector('#class').addEventListener('click', function (e) {
   console.log(e.target.value)
-  selectValue = e.target.value
+  classValue = e.target.value
 })
 
 const data = {
   surname: surnameValue,
   othersName: othernameValue,
-  class: 'ss2',
+  class: classValue,
   email: emailValue,
-  gender: 'male',
+  gender: genderValue,
   school: schoolValue,
   phone: phoneValue,
 }
@@ -85,3 +100,7 @@ function handleSubmit() {
       console.log(error)
     })
 }
+document.querySelector('#submit').addEventListener('click', function (e) {
+  e.preventDefault()
+  handleSubmit()
+})
